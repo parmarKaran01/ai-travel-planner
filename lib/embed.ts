@@ -1,8 +1,8 @@
 // lib/embed.ts
-import { pipeline, type Pipeline } from "@xenova/transformers";
+import { pipeline } from "@xenova/transformers";
 
 // The embedding model type returned by pipeline()
-type EmbeddingModel = Pipeline;
+type EmbeddingModel = any;
 
 // Cache the embedder instance
 let embedder: EmbeddingModel | null = null;
