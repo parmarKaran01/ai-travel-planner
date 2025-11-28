@@ -1,6 +1,5 @@
 // app/api/plan/route.ts
-import { NextResponse } from "next/server";
-import type { Request } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { Pinecone } from "@pinecone-database/pinecone";
 import { embedText } from "@/lib/embed"; // your lib/embed.ts
 import OpenAI from "openai";
@@ -41,7 +40,7 @@ function buildContext(matches: any[]) {
         .join("\n\n");
 }
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
     try {
         const body: PlanRequestBody = await req.json();
 
