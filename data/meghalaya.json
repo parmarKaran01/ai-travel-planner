@@ -1,0 +1,503 @@
+[
+    {
+        "id": "shillong_city",
+        "name": "Shillong",
+        "type": "city",
+        "state": "Meghalaya",
+        "tags": [
+            "capital",
+            "hill_station",
+            "markets",
+            "culture"
+        ],
+        "description": "The capital of Meghalaya known for its rolling hills, cafes, lakes and a lively music culture.",
+        "best_time": "October to April",
+        "local_tips": "Try local Khasi cuisine at Police Bazar and explore Laitumkhrah for cafes."
+    },
+    {
+        "id": "cherrapunji_city",
+        "name": "Cherrapunji",
+        "type": "city",
+        "state": "Meghalaya",
+        "tags": [
+            "rainfall",
+            "valleys",
+            "waterfalls"
+        ],
+        "description": "A misty hill town famous for some of the world's highest rainfall, deep valleys and iconic waterfalls.",
+        "best_time": "October to March",
+        "local_tips": "Carry rain gear year-round; viewpoints get cloudy quickly."
+    },
+    {
+        "id": "mawlynnong_village",
+        "name": "Mawlynnong",
+        "type": "village",
+        "state": "Meghalaya",
+        "tags": [
+            "cleanest_village",
+            "root_bridges"
+        ],
+        "description": "Known as Asia's cleanest village, offering bamboo walkways, viewpoints and a living root bridge.",
+        "best_time": "October to April",
+        "local_tips": "Walk through the village early morning for the best experience."
+    },
+    {
+        "id": "dawki_town",
+        "name": "Dawki",
+        "type": "town",
+        "state": "Meghalaya",
+        "tags": [
+            "river",
+            "boating",
+            "border_town"
+        ],
+        "description": "A small town near the Bangladesh border famous for the crystal-clear Umngot River.",
+        "best_time": "November to March",
+        "local_tips": "Visit before noon for the clearest river visibility."
+    },
+    {
+        "id": "mawsynram_village",
+        "name": "Mawsynram",
+        "type": "village",
+        "state": "Meghalaya",
+        "tags": [
+            "rainfall",
+            "caves",
+            "valleys"
+        ],
+        "description": "One of the wettest places on Earth, surrounded by lush hills, caves and cloud-filled valleys.",
+        "best_time": "October to February",
+        "local_tips": "Carry waterproof shoes if visiting outside winter."
+    },
+    {
+        "id": "jowai_town",
+        "name": "Jowai",
+        "type": "town",
+        "state": "Meghalaya",
+        "tags": [
+            "lakes",
+            "waterfalls",
+            "culture"
+        ],
+        "description": "A scenic town in the Jaintia Hills known for crystal lakes, green plateaus and serene landscapes.",
+        "best_time": "October to March",
+        "local_tips": "Visit Thadlaskein Lake during sunset."
+    },
+    {
+        "id": "nongriat_village",
+        "name": "Nongriat",
+        "type": "village",
+        "state": "Meghalaya",
+        "tags": [
+            "trekking",
+            "root_bridges"
+        ],
+        "description": "The base village for the Double Decker Living Root Bridge trek, known for jungles and natural pools.",
+        "best_time": "November to February",
+        "local_tips": "The 3,000-step descent is steep; start early to avoid heat."
+    },
+    {
+        "id": "laitlum_canyons",
+        "name": "Laitlum Canyons",
+        "type": "viewpoint",
+        "state": "Meghalaya",
+        "location": "Shillong outskirts",
+        "tags": [
+            "viewpoint",
+            "sunset",
+            "trek"
+        ],
+        "description": "A dramatic canyon viewpoint offering panoramic ridges, deep gorges and sweeping cloud views.",
+        "best_time": "Morning or sunset",
+        "duration_hours": 2,
+        "entry_fee": "Free",
+        "local_tips": "Cloud cover appears suddenly—aim for early morning."
+    },
+    {
+        "id": "umiam_lake",
+        "name": "Umiam Lake",
+        "type": "lake",
+        "state": "Meghalaya",
+        "location": "Shillong",
+        "tags": [
+            "lake",
+            "boating",
+            "picnic"
+        ],
+        "description": "A serene reservoir surrounded by pine forests, popular for boat rides and lakeside resorts.",
+        "best_time": "October to April",
+        "duration_hours": 2,
+        "entry_fee": "₹20",
+        "local_tips": "Stop at the viewpoint while driving from Guwahati to Shillong."
+    },
+    {
+        "id": "elephant_falls",
+        "name": "Elephant Falls",
+        "type": "waterfall",
+        "state": "Meghalaya",
+        "location": "Shillong",
+        "tags": [
+            "waterfall",
+            "nature"
+        ],
+        "description": "A popular three-tiered waterfall on the outskirts of Shillong surrounded by greenery.",
+        "best_time": "October to March",
+        "duration_hours": 1,
+        "entry_fee": "₹50",
+        "local_tips": "The stairs may be slippery during monsoon."
+    },
+    {
+        "id": "ward_lake",
+        "name": "Ward's Lake",
+        "type": "lake",
+        "state": "Meghalaya",
+        "location": "Shillong",
+        "tags": [
+            "lake",
+            "garden"
+        ],
+        "description": "A small artificial lake in central Shillong ideal for peaceful walks and boating.",
+        "best_time": "October to April",
+        "duration_hours": 1,
+        "entry_fee": "₹20",
+        "local_tips": "Visit in the evening for a relaxed stroll."
+    },
+    {
+        "id": "mawsmai_cave",
+        "name": "Mawsmai Cave",
+        "type": "cave",
+        "state": "Meghalaya",
+        "location": "Cherrapunji",
+        "tags": [
+            "caving",
+            "limestone"
+        ],
+        "description": "A short limestone cave with narrow passages, stalactites and unique rock formations.",
+        "best_time": "November to March",
+        "duration_hours": 1,
+        "entry_fee": "₹30",
+        "local_tips": "Wear shoes with good grip; parts of the cave are low."
+    },
+    {
+        "id": "nohkalikai_falls",
+        "name": "Nohkalikai Falls",
+        "type": "waterfall",
+        "state": "Meghalaya",
+        "location": "Cherrapunji",
+        "tags": [
+            "waterfall",
+            "viewpoint"
+        ],
+        "description": "One of India's tallest plunge waterfalls with a dramatic turquoise pool.",
+        "best_time": "October to March",
+        "duration_hours": 1,
+        "entry_fee": "₹50",
+        "local_tips": "Afternoons often get foggy—visit before noon."
+    },
+    {
+        "id": "seven_sisters_falls",
+        "name": "Seven Sisters Falls",
+        "type": "waterfall",
+        "state": "Meghalaya",
+        "location": "Cherrapunji",
+        "tags": [
+            "waterfall",
+            "monsoon_view"
+        ],
+        "description": "A group of seven segmented waterfalls flowing down a tall limestone cliff.",
+        "best_time": "July to September for full flow",
+        "duration_hours": 1,
+        "entry_fee": "Free",
+        "local_tips": "Not impressive in winter; best seen during monsoon."
+    },
+    {
+        "id": "dainthlen_falls",
+        "name": "Dainthlen Falls",
+        "type": "waterfall",
+        "state": "Meghalaya",
+        "location": "Cherrapunji",
+        "tags": [
+            "waterfall",
+            "mythology"
+        ],
+        "description": "A scenic waterfall with local legends about the defeat of a giant serpent.",
+        "best_time": "October to March",
+        "duration_hours": 1,
+        "entry_fee": "Free",
+        "local_tips": "Go near sunset for golden-hour photos."
+    },
+    {
+        "id": "double_decker_root_bridge",
+        "name": "Double Decker Living Root Bridge",
+        "type": "root_bridge",
+        "state": "Meghalaya",
+        "location": "Nongriat",
+        "tags": [
+            "trek",
+            "root_bridge",
+            "jungle"
+        ],
+        "description": "A famous two-layered living root bridge accessible through a steep trek from Cherrapunji.",
+        "best_time": "November to February",
+        "duration_hours": 6,
+        "entry_fee": "₹50",
+        "local_tips": "Carry water; the trek has over 3,000 steep steps."
+    },
+    {
+        "id": "single_root_bridge_mawlynnong",
+        "name": "Living Root Bridge (Mawlynnong)",
+        "type": "root_bridge",
+        "state": "Meghalaya",
+        "location": "Mawlynnong",
+        "tags": [
+            "root_bridge",
+            "nature"
+        ],
+        "description": "A photogenic root bridge near Asia’s cleanest village.",
+        "best_time": "October to April",
+        "duration_hours": 1,
+        "entry_fee": "₹50",
+        "local_tips": "Combine the visit with Sky View Tower."
+    },
+    {
+        "id": "umngot_river",
+        "name": "Umngot River",
+        "type": "river",
+        "state": "Meghalaya",
+        "location": "Dawki",
+        "tags": [
+            "river",
+            "boating",
+            "crystal_clear"
+        ],
+        "description": "A crystal-clear river known for transparent boating experiences.",
+        "best_time": "November to March",
+        "duration_hours": 2,
+        "entry_fee": "Boat rides from ₹800",
+        "local_tips": "Avoid weekends due to crowds."
+    },
+    {
+        "id": "bangladesh_viewpoint",
+        "name": "Bangladesh Viewpoint",
+        "type": "viewpoint",
+        "state": "Meghalaya",
+        "location": "Dawki",
+        "tags": [
+            "border_view",
+            "sunset"
+        ],
+        "description": "A viewpoint overlooking plains of Bangladesh from atop Meghalaya’s hills.",
+        "best_time": "Evening",
+        "duration_hours": 1,
+        "entry_fee": "Free",
+        "local_tips": "Clearer views post-monsoon."
+    },
+    {
+        "id": "mawphlang_sacred_forest",
+        "name": "Mawphlang Sacred Forest",
+        "type": "forest",
+        "state": "Meghalaya",
+        "location": "near Shillong",
+        "tags": [
+            "forest",
+            "heritage",
+            "guided_tour"
+        ],
+        "description": "An ancient, sacred forest protected by local Khasi traditions with rare flora.",
+        "best_time": "October to April",
+        "duration_hours": 2,
+        "entry_fee": "₹100",
+        "local_tips": "A guided tour enhances the experience."
+    },
+    {
+        "id": "krang_suri_falls",
+        "name": "Krang Suri Falls",
+        "type": "waterfall",
+        "state": "Meghalaya",
+        "location": "Jowai",
+        "tags": [
+            "waterfall",
+            "turquoise_pool"
+        ],
+        "description": "A stunning blue waterfall with a refreshing swimming pool.",
+        "best_time": "October to April",
+        "duration_hours": 2,
+        "entry_fee": "₹50",
+        "local_tips": "Life jackets are mandatory for swimming."
+    },
+    {
+        "id": "thalangkai_bridge",
+        "name": "Thalangkai Natural Bridge",
+        "type": "root_bridge",
+        "state": "Meghalaya",
+        "location": "Jowai region",
+        "tags": [
+            "root_bridge",
+            "nature"
+        ],
+        "description": "A lesser-known living root bridge offering a peaceful nature escape.",
+        "best_time": "October to March",
+        "duration_hours": 2,
+        "entry_fee": "₹30",
+        "local_tips": "Few tourists visit here; great for photography."
+    },
+    {
+        "id": "pung_pond_lake",
+        "name": "Pung Pond",
+        "type": "lake",
+        "state": "Meghalaya",
+        "location": "Jaintia Hills",
+        "tags": [
+            "lake",
+            "picnic"
+        ],
+        "description": "A calm lake surrounded by forests, popular among locals for picnics.",
+        "best_time": "October to March",
+        "duration_hours": 1,
+        "entry_fee": "Free",
+        "local_tips": "Bring snacks; no shops nearby."
+    },
+    {
+        "id": "thadlaskein_lake",
+        "name": "Thadlaskein Lake",
+        "type": "lake",
+        "state": "Meghalaya",
+        "location": "Jowai",
+        "tags": [
+            "lake",
+            "sunset"
+        ],
+        "description": "A scenic lake tied to local legends, ideal for peaceful evenings.",
+        "best_time": "Evening",
+        "duration_hours": 1,
+        "entry_fee": "₹20",
+        "local_tips": "Beautiful light around golden hour."
+    },
+    {
+        "id": "krem_liat_prat_cave",
+        "name": "Krem Liat Prah",
+        "type": "cave",
+        "state": "Meghalaya",
+        "location": "Jaintia Hills",
+        "tags": [
+            "caving",
+            "adventure"
+        ],
+        "description": "One of India's longest caves, known for massive chambers and adventure caving.",
+        "best_time": "December to March",
+        "duration_hours": 4,
+        "entry_fee": "Permit required",
+        "local_tips": "Only for experienced trekkers with a guide."
+    },
+    {
+        "id": "krem_mawmluh",
+        "name": "Krem Mawmluh",
+        "type": "cave",
+        "state": "Meghalaya",
+        "location": "Cherrapunji",
+        "tags": [
+            "caving",
+            "wet_caves"
+        ],
+        "description": "A cave with unique rock formations and wet sections formed by underground streams.",
+        "best_time": "November to February",
+        "duration_hours": 2,
+        "entry_fee": "₹20",
+        "local_tips": "Wear waterproof shoes; the cave is slippery."
+    },
+    {
+        "id": "mawkdok_dympep",
+        "name": "Mawkdok Dympep Valley",
+        "type": "viewpoint",
+        "state": "Meghalaya",
+        "location": "Cherrapunji highway",
+        "tags": [
+            "valley",
+            "zipline"
+        ],
+        "description": "A dramatic V-shaped valley popular for its zip lining and panoramic views.",
+        "best_time": "October to April",
+        "duration_hours": 1,
+        "entry_fee": "Viewpoint free, zipline from ₹500",
+        "local_tips": "Try ziplining for a great view."
+    },
+    {
+        "id": "weisawdong_falls",
+        "name": "Weisawdong Falls",
+        "type": "waterfall",
+        "state": "Meghalaya",
+        "location": "Sohra region",
+        "tags": [
+            "waterfall",
+            "multi_tier"
+        ],
+        "description": "A breathtaking three-tier waterfall accessed via a steep forest trail.",
+        "best_time": "November to February",
+        "duration_hours": 3,
+        "entry_fee": "₹30",
+        "local_tips": "The trail is slippery; avoid monsoon."
+    },
+    {
+        "id": "nongkhnum_island",
+        "name": "Nongkhnum Island",
+        "type": "island",
+        "state": "Meghalaya",
+        "location": "West Khasi Hills",
+        "tags": [
+            "island",
+            "beach",
+            "lake"
+        ],
+        "description": "One of the largest river islands in Asia, featuring sandy river shores and scenic cliffs.",
+        "best_time": "October to April",
+        "duration_hours": 4,
+        "entry_fee": "Free",
+        "local_tips": "Carry snacks and water; limited facilities."
+    },
+    {
+        "id": "activities_trekking",
+        "name": "Trekking",
+        "type": "activity",
+        "state": "Meghalaya",
+        "tags": [
+            "adventure",
+            "nature"
+        ],
+        "description": "Popular treks include Double Decker Root Bridge, Laitlum Canyon hikes and rural village trails.",
+        "best_time": "November to February"
+    },
+    {
+        "id": "activities_caving",
+        "name": "Caving",
+        "type": "activity",
+        "state": "Meghalaya",
+        "tags": [
+            "adventure"
+        ],
+        "description": "Meghalaya has some of India’s longest and most challenging caves.",
+        "best_time": "December to March"
+    },
+    {
+        "id": "activities_waterfalls",
+        "name": "Waterfall Hopping",
+        "type": "activity",
+        "state": "Meghalaya",
+        "tags": [
+            "nature"
+        ],
+        "description": "Visit iconic waterfalls like Nohkalikai, Krang Suri and Seven Sisters.",
+        "best_time": "October to April"
+    },
+    {
+        "id": "activities_boating",
+        "name": "Boating",
+        "type": "activity",
+        "state": "Meghalaya",
+        "tags": [
+            "river",
+            "relax"
+        ],
+        "description": "Transparent river boating at Dawki’s Umngot River is a must-do.",
+        "best_time": "November to March"
+    }
+]
