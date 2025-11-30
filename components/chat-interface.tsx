@@ -7,6 +7,15 @@ import remarkGfm from "remark-gfm";
 
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 interface Message {
   role: "user" | "assistant";
@@ -22,6 +31,8 @@ export function ChatInterface() {
   ]);
   const [isLoading, setIsLoading] = React.useState(false);
   const [inputValue, setInputValue] = React.useState("");
+  const [days, setDays] = React.useState("3");
+  const [budget, setBudget] = React.useState("mid-range");
 
   const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
@@ -43,26 +54,41 @@ export function ChatInterface() {
         },
         body: JSON.stringify({
           q: userMessage.content,
-          days: 3, // Default or could be parsed from input
-          budget: "mid-range", // Default
+          days: Number(days),
+          budget: budget,
         }),
       });
-      const data = await response.json();
 
-      if (data.itinerary) {
-        const assistantMessage: Message = {
-          role: "assistant",
-          content: data.itinerary,
-        };
-        setMessages((prev) => [...prev, assistantMessage]);
-      } else {
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "assistant",
-            content: "I couldn't generate an itinerary. Please try again.",
-          },
-        ]);
+      if (!response.ok || !response.body) {
+        throw new Error("Failed to fetch response");
+      }
+
+      // Create a placeholder message for the assistant
+      const assistantMessage: Message = {
+        role: "assistant",
+        content: "",
+      };
+      setMessages((prev) => [...prev, assistantMessage]);
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let done = false;
+      let accumulatedContent = "";
+
+      while (!done) {
+        const { value, done: doneReading } = await reader.read();
+        done = doneReading;
+        const chunkValue = decoder.decode(value, { stream: true });
+        accumulatedContent += chunkValue;
+
+        setMessages((prev) => {
+          const newMessages = [...prev];
+          const lastMessage = newMessages[newMessages.length - 1];
+          if (lastMessage.role === "assistant") {
+            lastMessage.content = accumulatedContent;
+          }
+          return newMessages;
+        });
       }
     } catch (error) {
       console.error("Failed to fetch recommendations:", error);
@@ -122,25 +148,65 @@ export function ChatInterface() {
             </div>
           </div>
         ))}
+        {isLoading && messages[messages.length - 1]?.role === "user" && (
+          <div className="flex justify-start">
+            <div className="bg-muted text-muted-foreground max-w-[80%] rounded-lg px-4 py-2">
+              <span className="animate-pulse">Thinking...</span>
+            </div>
+          </div>
+        )}
       </div>
 
-      <div className="relative">
+      <div className="relative rounded-lg border bg-background p-2 shadow-sm">
         <Textarea
           placeholder="Describe your dream trip..."
-          className="min-h-[60px] w-full resize-none pr-12"
+          className="min-h-[60px] w-full resize-none border-0 p-3 shadow-none focus-visible:ring-0"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleKeyDown}
         />
-        <Button
-          size="icon"
-          className="absolute right-2 bottom-2 h-8 w-8"
-          onClick={handleSendMessage}
-          disabled={!inputValue.trim() || isLoading}
-        >
-          <Send className="h-4 w-4" />
-          <span className="sr-only">Send</span>
-        </Button>
+        <div className="flex items-center justify-between p-2">
+          <div className="flex gap-2">
+            <Select value={days} onValueChange={setDays}>
+              <SelectTrigger className="w-[130px] h-8 text-xs">
+                <SelectValue placeholder="Duration" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Duration</SelectLabel>
+                  <SelectItem value="3">3 Days</SelectItem>
+                  <SelectItem value="5">5 Days</SelectItem>
+                  <SelectItem value="7">7 Days</SelectItem>
+                  <SelectItem value="10">10 Days</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+
+            <Select value={budget} onValueChange={setBudget}>
+              <SelectTrigger className="w-[130px] h-8 text-xs">
+                <SelectValue placeholder="Budget" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Budget</SelectLabel>
+                  <SelectItem value="budget">Budget</SelectItem>
+                  <SelectItem value="mid-range">Mid-Range</SelectItem>
+                  <SelectItem value="luxury">Luxury</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <Button
+            size="sm"
+            className="h-8 px-3"
+            onClick={handleSendMessage}
+            disabled={!inputValue.trim() || isLoading}
+          >
+            <Send className="mr-2 h-3.5 w-3.5" />
+            Send
+          </Button>
+        </div>
       </div>
     </div>
   );
