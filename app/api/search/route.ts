@@ -80,17 +80,6 @@ export async function POST(req: NextRequest) {
 
         const matches = pineRes.matches ?? [];
 
-        if (!matches.length) {
-            return NextResponse.json(
-                {
-                    query,
-                    results: [],
-                    itinerary: `No relevant places found in the knowledge base for: "${query}".`,
-                },
-                { status: 200 }
-            );
-        }
-
         // 4) Build context for LLM
         const context = buildContext(matches);
 
@@ -115,14 +104,14 @@ ${context}
 Now produce the itinerary in Markdown. Keep answers concise but actionable.
 `;
 
-        // 6) Call OpenAI
+        // 6) Call OpenAI with streaming
         const openai = new OpenAI({
             apiKey: process.env.OPENAI_API_KEY,
         });
 
         const model = process.env.OPENAI_MODEL ?? "gpt-4o-mini";
 
-        const completion = await openai.chat.completions.create({
+        const stream = await openai.chat.completions.create({
             model,
             messages: [
                 { role: "system", content: "You are an expert travel planner for Meghalaya, India." },
@@ -130,27 +119,29 @@ Now produce the itinerary in Markdown. Keep answers concise but actionable.
             ],
             max_tokens: 1000,
             temperature: 0.2,
+            stream: true,
         });
 
-        const itinerary =
-            completion.choices?.[0]?.message?.content ??
-            "No itinerary produced by model.";
-
-        console.log(">>>>>>itinerary", itinerary);
-
-        // 7) Return structured response
-        return NextResponse.json({
-            query,
-            days,
-            budget,
-            usedDocuments: matches.map((m) => ({
-                id: m.id,
-                score: m.score,
-                name: m.metadata?.name ?? null,
-                type: m.metadata?.type ?? null,
-            })),
-            itinerary,
+        // 7) Return a streaming response
+        const encoder = new TextEncoder();
+        const readable = new ReadableStream({
+            async start(controller) {
+                for await (const chunk of stream) {
+                    const text = chunk.choices[0]?.delta?.content || "";
+                    if (text) {
+                        controller.enqueue(encoder.encode(text));
+                    }
+                }
+                controller.close();
+            },
         });
+
+        return new NextResponse(readable, {
+            headers: {
+                "Content-Type": "text/plain; charset=utf-8",
+            },
+        });
+
     } catch (err: any) {
         console.error("RAG Planner Error:", err);
         return NextResponse.json(
